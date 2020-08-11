@@ -1,0 +1,58 @@
+{
+          "navigationMenuText"        : "Providers",
+          "navigationMenuURL"         : "/Provider",
+          "resourceImageLarge"        : "providers.jpg",
+          "resourceImageThumb"        : "",
+          "tableName" : "provider",
+          "ownedByFieldName" : "ownerid",
+          "fields" : {
+                        "ownerid" : {"dataType" : "int", "formlabel": "Owner", "formcomponent": "select", "linkedFieldKey": "User.ID"},
+                        "name" : {"dataType" : "string", "formlabel": "Company Name", "formcomponent": "text"},
+                        "address" : {"dataType" : "string", "formlabel": "Address", "formcomponent": "text"},
+                        "city" : {"dataType" : "string", "formlabel": "City", "formcomponent": "text"},
+                        "state" : {"dataType" : "string", "formlabel": "State", "formcomponent": "text"},
+                        "zip" : {"dataType" : "string", "formlabel": "Zip", "formcomponent": "text"},
+                        "website" : {"dataType" : "string", "formlabel": "Website", "formcomponent": "text"},
+                        "emailaddress" : {"dataType" : "string", "formlabel": "Email Address", "formcomponent": "text"},
+                        "phone" : {"dataType" : "string", "formlabel": "Phone", "formcomponent": "text"},
+                        "phonealt" : {"dataType" : "string", "formlabel": "Phone", "formcomponent": "text"},
+                        "notes" : {"dataType" : "string", "formlabel": "Notes", "formcomponent": "textarea"}
+                    },
+          "dependentCollections"  : {
+                        "Storagebins"       : {
+                                      "dataType" : "int",
+                                      "formlabel": "Bins",
+                                      "formcomponent": "list",
+                                      "LinkedResourceName" : "Storagebin",
+                                      "LinkedFieldName": "providerid",
+                                      "ListSize":4
+                                    },
+                        "Storagecontainers" : {
+                                      "dataType" : "int",
+                                      "formlabel": "Containers",
+                                      "formcomponent": "list",
+                                      "LinkedResourceName" : "Storagecontainer",
+                                      "LinkedFieldName": "providerid",
+                                      "ListSize":4
+                                    }
+          },
+          "associativeCollections" :
+                    {
+                      "clients" :
+                      {
+                        "dataType" : "int",
+                        "formlabel": "Clients",
+                        "formcomponent": "list",
+                        "associativeKeyField": "client.providerid",
+                        "associationObjects" :
+                        {
+                            "User" :
+                            { "LinkedFieldName" : "client.userid",
+                              "ListSize":4,
+                              "addButtonText": "add client",
+                              "displayText" : "Clients"
+                            }
+                        }
+                      }
+                    }
+        }

@@ -1,0 +1,60 @@
+{
+      "navigationMenuText"        : "Locations",
+      "navigationMenuURL"         : "/Storagelocation",
+      "resourceImageLarge"        : "locations.jpg",
+      "resourceImageThumb"        : "",
+      "tableName"                 : "storagelocation",
+      "ownedByFieldName"          : "facilityid",
+      "fields" : {
+                    "facilityid" : {"dataType" : "int", "formlabel": "Facility", "formcomponent": "select",  "linkedFieldKey": "Storagefacility.ID"},
+                    "name" : {"dataType" : "string", "formlabel": "Name", "formcomponent": "text"},
+                    "row" : {"dataType" : "string", "formlabel": "Row", "formcomponent": "text"},
+                    "col" : {"dataType" : "string", "formlabel": "Col", "formcomponent": "text"},
+                    "shelf" : {"dataType" : "string", "formlabel": "Shelf", "formcomponent": "text"},
+                    "xshelf" : {"dataType" : "string", "formlabel": "Shelf X", "formcomponent": "text"},
+                    "yshelf" : {"dataType" : "string", "formlabel": "Shelf Y", "formcomponent": "text"},
+                    "zshelf" : {"dataType" : "string", "formlabel": "Shelf Z", "formcomponent": "text"},
+                    "facilitycoords" : {"dataType" : "string", "formlabel": "Facility Coordinates", "formcomponent": "text"},
+                    "tags" : {"dataType" : "string", "formlabel": "Tags", "formcomponent": "text"},
+                    "lat" : {"dataType" : "string", "formlabel": "Latitude", "formcomponent": "text"},
+                    "lng" : {"dataType" : "string", "formlabel": "Longitude", "formcomponent": "text"},
+                    "notes" : {"dataType" : "string", "formlabel": "Notes", "formcomponent": "textarea"}
+                },
+      "associativeCollections" :
+                {
+                  "locationinventory" :
+                  {
+                    "dataType" : "int",
+                    "formlabel": "Inventory",
+                    "formcomponent": "list",
+                    "associativeKeyField": "storagelocationinventory.locationid",
+                    "associationObjects" :
+                    {
+                        "Storageitem" :
+                        { "LinkedFieldName" : "storagelocationinventory.itemid",
+                          "ListSize":4,
+                          "addButtonText": "add item",
+                          "displayText" : "Items"
+                        },
+                        "Storagecontainer" :
+                        { "LinkedFieldName" : "storagelocationinventory.containerid",
+                          "ListSize":4,
+                          "addButtonText": "add container",
+                          "displayText" : "Containers"
+                        },
+                        "Storagepallet" :
+                        { "LinkedFieldName" : "storagelocationinventory.palletid",
+                          "ListSize":4,
+                          "addButtonText": "add pallet",
+                          "displayText" : "Pallets"
+                        },
+                        "Storagebin" :
+                        { "LinkedFieldName" : "storagelocationinventory.binid",
+                          "ListSize":4,
+                          "addButtonText": "add bin",
+                          "displayText" : "Bins"
+                        }
+                    }
+                  }
+                }
+    }

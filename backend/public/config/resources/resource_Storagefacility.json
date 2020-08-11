@@ -1,0 +1,105 @@
+{
+          "navigationMenuText"        : "Facilities",
+          "navigationMenuURL"         : "/Storagefacility",
+          "resourceImageLarge"        : "facility.jpg",
+          "resourceImageThumb"        : "",
+          "tableName"                 : "storagefacility",
+          "ownedByFieldName"          : "ownerid",
+          "fields" : {
+                        "ownerid" : {"dataType" : "int", "formlabel": "Primary Owner", "formcomponent": "select", "linkedFieldKey": "User.ID"},
+                        "name" : {"dataType" : "string", "formlabel": "Name", "formcomponent": "text"},
+                        "address" : {"dataType" : "string", "formlabel": "Address", "formcomponent": "text"},
+                        "city" : {"dataType" : "string", "formlabel": "City", "formcomponent": "text"},
+                        "state" : {"dataType" : "string", "formlabel": "State", "formcomponent": "text"},
+                        "zip" : {"dataType" : "string", "formlabel": "Zip", "formcomponent": "text"},
+                        "website" : {"dataType" : "string", "formlabel": "Website", "formcomponent": "text"},
+                        "emailaddress" : {"dataType" : "string", "formlabel": "Email Address", "formcomponent": "text"},
+                        "phone" : {"dataType" : "string", "formlabel": "Phone", "formcomponent": "text"},
+                        "lat" : {"dataType" : "string", "formlabel": "Latitude", "formcomponent": "text"},
+                        "lng" : {"dataType" : "string", "formlabel": "Longitude", "formcomponent": "text"},
+                        "notes" : {"dataType" : "string", "formlabel": "Notes", "formcomponent": "textarea"}
+                    },
+          "associativeCollections" :
+                    {
+                      "facilityowners" :
+                      {
+                        "dataType" : "int",
+                        "formlabel": "Facility Owners",
+                        "formcomponent": "list",
+                        "associativeKeyField": "storagefacilityowners.facilityid",
+                        "associationObjects" :
+                        {
+                            "User" :
+                            { "LinkedFieldName" : "storagefacilityowners.userid",
+                              "ListSize":4,
+                              "addButtonText": "add owner",
+                              "displayText" : "Owners"
+                            }
+                        }
+                      },
+                      "facilityproviders" :
+                      {
+                        "dataType" : "int",
+                        "formlabel": "Facility Providers",
+                        "formcomponent": "list",
+                        "associativeKeyField": "storagefacilityproviders.facilityid",
+                        "associationObjects" :
+                        {
+                          "Provider" :
+                          { "LinkedFieldName" : "storagefacilityproviders.providerid",
+                            "ListSize":4,
+                            "addButtonText": "add provider",
+                            "displayText" : "Providers"
+                          }
+                        }
+                      },
+                      "facilityworkers" :
+                      {
+                        "dataType" : "int",
+                        "formlabel": "Facility Owners",
+                        "formcomponent": "list",
+                        "associativeKeyField": "storagefacilityworkers.facilityid",
+                        "associationObjects" :
+                        {
+                            "User" :
+                            { "LinkedFieldName" : "storagefacilityworkers.userid",
+                              "ListSize":4,
+                              "addButtonText": "add employee",
+                              "displayText" : "Employees"
+                            }
+                        }
+                      }
+                    },
+          "reporting" :
+                    {
+                      "Resource" :
+                      {
+                        "Companies" :
+                        {
+                          "row-header"  : "name",
+                          "row-detail"  :
+                          [
+                            { "col-head" : "City", "col-data" : "city" },
+                            { "col-head" : "State", "canSort" : true, "col-data" : "state" },
+                            { "col-head" : "Email Address", "col-data" : "emailaddress" },
+                            { "col-head" : "Phone", "col-data" : "phone" }
+                          ]
+                        }
+                      },
+                      "Record" :
+                      {
+                        "Associations" :
+                        {
+                          "associativeCollectionName" : "facilityowners",
+                          "row-header"  : "firstname,lastname",
+                          "row-detail"     :
+                          [
+                            { "col-head" : "First Name", "col-data" : "firstname" },
+                            { "col-head" : "Last Name", "canSort" : true, "col-data" : "lastname" },
+                            { "col-head" : "Email Addressfffff", "col-data" : "emailaddress" },
+                            { "col-head" : "Mobile", "col-data" : "phonemobile" }
+                          ]
+                        }
+                      }
+                    }
+        }

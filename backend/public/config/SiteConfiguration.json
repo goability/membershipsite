@@ -1,0 +1,29 @@
+
+{
+  "activeResources" : [
+    "Storagefacility",
+    "Provider",
+    "Storagelocation",
+    "Storagebin",
+    "Storagecontainer",
+    "Storagepallet"
+  ],
+  "alwaysAddResources" : [
+    "Storageitem"
+  ],
+  "navigationTopstatic" : {
+      "Signup" : {
+          "displayText" : "Join",
+          "url"         : "/Signup"
+          },
+      "Login"   : {
+          "displayText" : "Login",
+          "url"         : "/Login"
+          }
+  },
+  "copyrights" :
+  {
+    "Name" : "Unsplash.com",
+    "Description" : "Sample photos provided by unsplash.com "
+  }
+}

@@ -1,0 +1,87 @@
+/*
+Styles for Publicwarehouse
+Generate css by running:  lessc inputfile outputfile
+
+Common Style classes:
+
+ - MenuTop
+ - Footer
+ - Resource Header
+ - Resource Form
+
+
+*/
+body {
+  background: #F7EEC3;
+}
+.menuTop {
+  background: #9F881A;
+  color: #000000;
+  border-radius: 10px;
+  padding: 5px;
+}
+.menuTop a {
+  color: #DDE0E0;
+  font-size: small;
+  font-style: normal;
+  font-weight: lighter;
+}
+.footer {
+  background: #F7EEC3;
+  color: #827436;
+  font-size: small;
+}
+.resourceForm {
+  background: #DDD2A0;
+  color: #000000;
+  font-size: medium;
+  border-radius: 15px;
+  padding: 20px;
+}
+.resource-form-header {
+  background: #806B0A;
+  color: #000000;
+  font-size: medium;
+  border-radius: : 15px;
+}
+.form-label {
+  color: #000000;
+}
+.form-control-label {
+  color: #000000;
+  font-weight: bolder;
+}
+.resourceHeader {
+  font-size: x-large;
+}
+.adminTag {
+  font-size: x-small;
+  font-weight: bold;
+  text-decoration-color: Yellow;
+  background-color: #9F881A;
+  display: inline;
+}
+.resourceNav {
+  font-weight: bold;
+  background: #806B0A;
+}
+.resourceNavButtons {
+  font-size: x-small;
+}
+.nav-record-item-disassociate {
+  background-color: Yellow;
+  padding-right: 3px;
+}
+.nav-resource-tab-link a {
+  text-decoration: none;
+}
+.debugFormats {
+  font-size: x-small;
+  color: black;
+}
+.formElementBad {
+  border-color: Red;
+}
+.resourceCardImage {
+  max-width: 50%;
+}

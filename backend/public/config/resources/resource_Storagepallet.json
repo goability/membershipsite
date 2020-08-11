@@ -1,0 +1,48 @@
+{
+      "navigationMenuText"        : "Pallets",
+      "navigationMenuURL"         : "/Storagepallet",
+      "resourceImageLarge"        : "pallets.jpg",
+      "resourceImageThumb"        : "",
+      "tableName"                 : "storagepallet",
+      "ownedByFieldName"          : "facilityid, providerid",
+      "fields" : {
+                    "facilityid" : {"dataType" : "int", "formlabel": "Facility", "formcomponent": "select",  "linkedFieldKey": "Storagefacility.ID"},
+                    "providerid" : {"dataType" : "int", "formlabel": "Provider", "formcomponent": "select",  "linkedFieldKey": "Provider.ID"},
+                    "name" : {"dataType" : "string", "formlabel": "Name", "formcomponent": "text"},
+                    "sizexinches" : {"dataType" : "string", "formlabel": "X inches", "formcomponent": "text"},
+                    "sizeyinches" : {"dataType" : "string", "formlabel": "Y inches", "formcomponent": "text"},
+                    "sizezinches" : {"dataType" : "string", "formlabel": "Z inches", "formcomponent": "text"},
+                    "Description" : {"dataType" : "string", "formlabel": "Notes", "formcomponent": "textarea"}
+                },
+      "associativeCollections" :
+                {
+                  "palletinventory" :
+                  {
+                    "dataType" : "int",
+                    "formlabel": "Inventory",
+                    "formcomponent": "list",
+                    "associativeKeyField": "storagepalletinventory.palletid",
+                    "associationObjects" :
+                    {
+                        "Storageitem" :
+                        { "LinkedFieldName" : "storagepalletinventory.itemid",
+                          "ListSize":4,
+                          "addButtonText": "add item",
+                          "displayText" : "Items"
+                        },
+                        "Storagecontainer" :
+                        { "LinkedFieldName" : "storagepalletinventory.containerid",
+                          "ListSize":4,
+                          "addButtonText": "add container",
+                          "displayText" : "Containers"
+                        },
+                        "Storagebin" :
+                        { "LinkedFieldName" : "storagepalletinventory.binid",
+                          "ListSize":4,
+                          "addButtonText": "add bin",
+                          "displayText" : "Bins"
+                        }
+                    }
+                  }
+              }
+    }

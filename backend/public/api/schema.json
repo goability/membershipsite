@@ -1,0 +1,153 @@
+{
+  "name" : "Public Warehouse",
+  "version": 1,
+  "resources": [
+    {
+      "name": "user",
+      "fields" : {
+                    "companyname" : {},
+                    "firstname"   : {},
+                    "middlename"  : {},
+                    "lastname"    : {},
+                    "address"     : {},
+                    "city"        : {},
+                    "state"       : {},
+                    "zip"         : {},
+                    "phonemobile" : {},
+                    "phonehome"   : {},
+                    "phoneother"  : {},
+                    "facebookurl" : {},
+                    "linkedinurl" : {},
+                    "profilename" : {},
+                    "profileimagepath" : {},
+                    "ProfileImagePath" : {}
+                }
+
+    },
+    {
+      "name": "provider",
+      "fields" : {
+                    "facilities"  : {"type":"list"},
+                    "companyname" : {},
+                    "firstname"   : {},
+                    "middlename"  : {},
+                    "lastname"    : {},
+                    "address"     : {},
+                    "city"        : {},
+                    "state"       : {},
+                    "zip"         : {},
+                    "phonemobile" : {},
+                    "phonehome"   : {},
+                    "phoneother"  : {},
+                    "facebookurl" : {},
+                    "linkedinurl" : {},
+                    "profilename" : {},
+                    "profileimagepath" : {},
+                    "StorageItems": {"type":"list"}
+                }
+
+    },
+    {
+      "name": "client",
+      "fields" : {
+                    "providers"    : {},
+                    "companyname" : {},
+                    "firstname"   : {},
+                    "middlename"  : {},
+                    "lastname"    : {},
+                    "address"     : {},
+                    "city"        : {},
+                    "state"       : {},
+                    "zip"         : {},
+                    "website"     : {},
+                    "emailaddress": {},
+                    "phone"       : {},
+                    "notes"       : {},
+                    "phonemobile" : {},
+                    "phonehome"   : {},
+                    "phoneother"  : {},
+                    "facebookurl" : {},
+                    "linkedinurl" : {},
+                    "profilename" : {},
+                    "profileimagepath" : {},
+                    "storageitems": {"type":"list"}
+                }
+
+    },
+    {
+      "name": "storageitem",
+      "fields" : {
+                    "owner"       : {},
+                    "name"        : {},
+                    "sizexinches" : {},
+                    "sizeyinches" : {},
+                    "sizezinches" : {},
+                    "weightpounds": {},
+                    "description" : {},
+                    "facility"    : {},
+                    "location"    : {},
+                }
+    },
+    {
+      "name": "storagecontainer",
+      "fields" : {
+                    "provider"          : {},
+                    "name"              : {},
+                    "sizexinches"       : {},
+                    "sizeyinches"       : {},
+                    "sizezinches"       : {},
+                    "weightpounds"      : {},
+                    "description"       : {},
+                    "storageitems"      : {"type":"list"},
+                    "filledweightpounts":{}
+                }
+    },
+    {
+      "name": "location",
+      "fields" : {
+                    "facility"      : {},
+                    "name"          : {},
+                    "row"           : {},
+                    "col"           : {},
+                    "shelf"         : {},
+                    "xshelf"        : {},
+                    "yshelf"        : {},
+                    "zshelf"        : {},
+                    "facilitycoords": {},
+                    "tags"          : {},
+                    "lat"           : {},
+                    "lng"           : {},
+                    "storageitems": {"type":"list"}
+                }
+    },
+    {
+      "name": "facility",
+      "fields":{
+                "owner" : {},
+                "address" : {},
+                "city" : {},
+                "state" : {},
+                "zip" : {},
+                "website" : {},
+                "emailaddress" : {},
+                "phone" : {},
+                "phonealt" : {},
+                "notes" : {},
+                "locations" : { "type" :"list"}
+
+      }
+    },
+    {
+      "name": "movements",
+      "fields":{
+                "id" : {},
+                "datetimeutc" : {},
+                "mover" : {},
+                "itemowner" : {},
+                "sourcelocation" : {},
+                "destinationlocation" : {},
+                "notes" : {}
+      }
+    }
+  ]
+}

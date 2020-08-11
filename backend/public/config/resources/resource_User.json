@@ -1,0 +1,84 @@
+{
+    "navigationMenuText"        : "Profile",
+    "navigationMenuURL"         : "/User",
+    "resourceImageLarge"        : "users.jpg",
+    "resourceImageThumb"        : "",
+    "tableName" : "user",
+    "indexFieldname": "id",
+    "fields" : {
+                  "companyname" : {"dataType" : "string", "formlabel": "Company Name", "formcomponent": "text"},
+                  "firstname" :   {"dataType" : "string","formlabel": "First Name", "formcomponent": "text"},
+                  "middlename" :  {"dataType" : "string","formlabel": "Middle", "formcomponent": "text"},
+                  "lastname" :    {"dataType" : "string","formlabel": "Last", "formcomponent": "text"},
+                  "address" :     {"dataType" : "string","formlabel": "Address", "formcomponent": "text"},
+                  "city" :        {"dataType" : "string","formlabel": "City", "formcomponent": "text"},
+                  "state" :       {"dataType" : "string","formlabel": "State", "formcomponent": "text"},
+                  "zip" :         {"dataType" : "string","formlabel": "Zip", "formcomponent": "text"},
+                  "phonemobile" : {"dataType" : "string","formlabel": "Mobile", "formcomponent": "text"},
+                  "phonehome" :   {"dataType" : "string","formlabel": "Phone Home", "formcomponent": "text"},
+                  "phoneother" :  {"dataType" : "string","formlabel": "Phone Alt", "formcomponent": "text"},
+                  "emailaddress" : {"dataType" : "string","formlabel": "EmailAddress", "formcomponent": "text"},
+                  "website" :     {"dataType" : "string","formlabel": "Website", "formcomponent": "text"},
+                  "facebookurl" : {"dataType" : "string","formlabel": "Facebook", "formcomponent": "text"},
+                  "linkedinurl" : {"dataType" : "string","formlabel": "LinkedIn", "formcomponent": "text"},
+                  "profilename" : {"dataType" : "string","formlabel": "Profile Name", "formcomponent": "text"},
+                  "profileimagepath" : {"dataType" : "string","formlabel": "Profile Image", "formcomponent": "text"},
+                  "notes" : {"dataType" : "string", "formlabel": "Notes", "formcomponent": "textarea"}
+              },
+    "dependentCollections" :
+              {
+                  "StorageItems"      : {
+                                          "dataType" : "int",
+                                          "formlabel": "Storage Items",
+                                          "formcomponent": "list",
+                                          "LinkedResourceName" : "Storageitem",
+                                          "LinkedFieldName": "ownerid",
+                                          "ListSize":4
+                                        },
+                  "Providers"         : {
+                                          "dataType" : "int",
+                                          "formlabel": "Providers",
+                                          "formcomponent": "list",
+                                          "LinkedResourceName" : "Provider",
+                                          "LinkedFieldName": "ownerid",
+                                          "ListSize":4,
+                                          "addButtonText" : "request"
+                                        },
+                  "Storagefacilities" : {
+                                          "dataType" : "int",
+                                          "formlabel": "Facilities",
+                                          "formcomponent": "list",
+                                          "LinkedResourceName" : "Storagefacility",
+                                          "LinkedFieldName": "ownerid",
+                                          "ListSize":4
+                                        }
+              },
+    "reporting" :
+              {
+                "Resource" :
+                {
+                  "Companies" :
+                  {
+                    "row-header"  : "companyname",
+                    "row-detail"  :
+                    [
+                      { "col-head" : "First Name", "col-data" : "firstname" },
+                      { "col-head" : "Last Name", "canSort" : true, "col-data" : "lastname" },
+                      { "col-head" : "Email Address", "col-data" : "emailaddress" },
+                      { "col-head" : "Mobile", "col-data" : "phonemobile" }
+                    ]
+                  },
+                  "Owners" :
+                  {
+                    "row-header"  : "firstname,lastname",
+                    "row-detail"     :
+                    [
+                      { "col-head" : "First Name", "col-data" : "firstname" },
+                      { "col-head" : "Last Name", "canSort" : true, "col-data" : "lastname" },
+                      { "col-head" : "Email Address", "col-data" : "emailaddress" },
+                      { "col-head" : "Mobile", "col-data" : "phonemobile" }
+                    ]
+                  }
+                }
+              }
+  }
