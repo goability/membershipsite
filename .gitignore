@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+log/
+db/
+vendor/
+node_modules/
