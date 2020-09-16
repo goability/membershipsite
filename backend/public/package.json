@@ -10,5 +10,8 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "less": "^3.11.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
   }
 }
