@@ -12,6 +12,6 @@
     "less": "^3.11.1"
   },
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   }
 }
